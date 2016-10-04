@@ -1,5 +1,5 @@
 {
-    "name": "farpse/yii2-behavior-subset",
+    "name": "suver/yii2-behavior-subset",
     "description": "Behavior Subset",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","behavior","subset","farpse"],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "farpse\\behavior\\subset\\": ""
+            "suver\\behavior\\subset\\": ""
         }
     }
 }
