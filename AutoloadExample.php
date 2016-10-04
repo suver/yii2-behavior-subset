@@ -1,6 +1,6 @@
 <?php
 
-namespace farpse\behavior\subset;
+namespace suver\behavior\subset;
 
 /**
  * This is just an example.
