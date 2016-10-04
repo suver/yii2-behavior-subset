@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Frapse Behavior Subset
 ======================
 Behavior Subset
@@ -29,3 +30,7 @@ Once the extension is installed, simply use it in your code by  :
 
 ```php
 <?= \farpse\behavior\subset\AutoloadExample::widget(); ?>```
+=======
+# yii2-behavior-subset
+Behavior subset. Esey work with many to many relations
+>>>>>>> 50ff5afd995365472c39ce5d388757f18c8fa9a1
