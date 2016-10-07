@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist suver/yii2-behavior-subset "*"
+php composer.phar require suver/yii2-behavior-subset
 ```
 
 or add
@@ -21,6 +21,33 @@ or add
 
 to the require section of your `composer.json` file.
 
+Configure
+---------
+
+Write you behaviors section like this for Many-To-Many
+
+```php
+public function behaviors()
+{
+    return [
+        [
+            'class' => '\suver\behavior\Subset',
+            'relation' => 'authors', // you relation
+            'attribute' => 'authors_ids',
+        ]
+    ];
+}
+
+/**
+ * Relation with Other Model
+ *
+ * @return \yii\db\ActiveQuery
+ */
+public function getAuthors()
+{
+    return $this->hasMany(OtherModel::className(), ['id' => 'other_model_id'])->viaTable('this_model_to_other_model', ['this_model_id' => 'id']);
+}
+```
 
 Usage
 -----
@@ -28,7 +55,15 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \suver\behavior\subset\AutoloadExample::widget(); ?>
+
+// save relation
+$model->authors_ids = [1,2,3,4];
+$model->save();
+
+// get realtion
+var_dump($model->authors)
+
+
 ```
 
 # yii2-behavior-subset
