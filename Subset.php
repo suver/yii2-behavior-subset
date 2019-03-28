@@ -1,6 +1,6 @@
 <?php
 
-namespace suver\behavior;
+namespace suver\behavior\subset;
 
 use yii;
 use yii\base\Behavior;
@@ -40,7 +40,7 @@ class Subset extends Behavior
     public function searchSubset() {
 
         if (is_array($ownerPk = $this->owner->getPrimaryKey())) {
-            throw new ErrorException("This behavior does not support composite primary keys");
+            throw new yii\base\ErrorException("This behavior does not support composite primary keys");
         }
 
         if(!method_exists($this->owner, $this->relationMethod)) {
@@ -58,7 +58,7 @@ class Subset extends Behavior
     public function saveSubset() {
 
         if (is_array($ownerPk = $this->owner->getPrimaryKey())) {
-            throw new ErrorException("This behavior does not support composite primary keys");
+            throw new yii\base\ErrorException("This behavior does not support composite primary keys");
         }
 
         if(!method_exists($this->owner, $this->relationMethod)) {
